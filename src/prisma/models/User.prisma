@@ -1,0 +1,13 @@
+model User {
+    id           Int       @id @default(autoincrement())
+    email   String    @unique
+    password   String    @db.VarChar(255)
+    role_id Int       @default(10)
+    first_name String   @db.VarChar(255)
+    last_name String   @db.VarChar(255)
+    role     Role       @relation(fields: [role_id], references: [id])
+    created_at   DateTime  @default(now())
+    updated_at   DateTime  @default(now())
+
+    @@map("users")
+}

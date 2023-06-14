@@ -1,0 +1,9 @@
+model Code {
+    id           Int       @id @default(autoincrement())
+    hash   String    @db.VarChar(255)
+    email   String    @db.VarChar(255)
+    code   String    @db.VarChar(255)
+    expired_at   DateTime
+    type   String    @db.VarChar(255)
+    @@map("codes")
+}
